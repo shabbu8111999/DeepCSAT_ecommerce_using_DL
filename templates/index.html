@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>DeepCSAT Prediction</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DeepCSAT AI Dashboard</title>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
@@ -18,48 +21,143 @@
 
 <div class="card">
 
+<header class="header">
+
 <h1>DeepCSAT</h1>
 
-<p class="subtitle">Ecommerce Customer Satisfaction Prediction</p>
+<p class="subtitle">
+AI Powered Ecommerce Customer Satisfaction Prediction
+</p>
+
+</header>
 
 
-<label>Customer Remark</label>
-<textarea id="remark"></textarea>
+<form id="predictionForm">
+
+<!-- remark -->
+
+<div class="form-group">
+
+<label for="remark">Customer Remark</label>
+
+<textarea
+id="remark"
+placeholder="Example: The agent resolved my issue quickly and was very helpful"
+required
+></textarea>
+
+</div>
 
 
-<label>Response Time</label>
-<input type="number" id="response_time">
+<!-- numeric inputs -->
+
+<div class="grid">
+
+<div class="form-group">
+
+<label for="response_time">Response Time (minutes)</label>
+
+<input
+type="number"
+id="response_time"
+placeholder="Example: 10"
+required
+>
+
+</div>
 
 
-<label>Survey Delay</label>
-<input type="number" id="survey_delay">
+<div class="form-group">
+
+<label for="survey_delay">Survey Delay (minutes)</label>
+
+<input
+type="number"
+id="survey_delay"
+placeholder="Example: 20"
+required
+>
+
+</div>
 
 
-<label>Issue Hour</label>
-<input type="number" id="issue_hour">
+<div class="form-group">
+
+<label for="issue_hour">Issue Hour (0-23)</label>
+
+<input
+type="number"
+id="issue_hour"
+placeholder="Example: 14"
+required
+>
+
+</div>
 
 
-<label>Issue Day</label>
-<input type="number" id="issue_day">
+<div class="form-group">
+
+<label for="issue_day">Issue Day (1-31)</label>
+
+<input
+type="number"
+id="issue_day"
+placeholder="Example: 12"
+required
+>
+
+</div>
 
 
-<label>Issue Month</label>
-<input type="number" id="issue_month">
+<div class="form-group">
+
+<label for="issue_month">Issue Month (1-12)</label>
+
+<input
+type="number"
+id="issue_month"
+placeholder="Example: 3"
+required
+>
+
+</div>
+
+</div>
 
 
-<button onclick="predictCSAT()">Predict CSAT</button>
+<!-- predict button -->
 
+<button type="submit" id="predictBtn">
+
+Predict CSAT
+
+</button>
+
+</form>
+
+
+<!-- loader -->
+
+<div id="loader" class="loader hidden"></div>
+
+
+<!-- result -->
 
 <h2 id="result"></h2>
 
 
-<!-- probability chart -->
+<!-- chart -->
+
+<div class="chart-container">
+
 <canvas id="probChart"></canvas>
 
-
 </div>
 
 </div>
+
+</div>
+
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
