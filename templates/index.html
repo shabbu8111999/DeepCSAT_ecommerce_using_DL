@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DeepCSAT Prediction</title>
 
@@ -16,56 +13,57 @@
 
 <div class="page">
 
-    <div class="card">
+<div class="card">
 
-        <h1>DeepCSAT</h1>
-        <p class="subtitle">Ecommerce Customer Satisfaction Prediction</p>
+<h1>DeepCSAT</h1>
 
-        <div class="form-group">
-            <label>Customer Remark</label>
-            <textarea id="remark" placeholder="Enter customer feedback..."></textarea>
-        </div>
+<p class="subtitle">Ecommerce Customer Satisfaction Prediction</p>
 
-        <div class="grid">
 
-            <div class="form-group">
-                <label>Response Time (minutes)</label>
-                <input type="number" id="response_time">
-            </div>
+<label>Customer Remark</label>
 
-            <div class="form-group">
-                <label>Survey Delay (minutes)</label>
-                <input type="number" id="survey_delay">
-            </div>
+<textarea id="remark"></textarea>
 
-            <div class="form-group">
-                <label>Issue Hour</label>
-                <input type="number" id="issue_hour">
-            </div>
 
-            <div class="form-group">
-                <label>Issue Day</label>
-                <input type="number" id="issue_day">
-            </div>
+<label>Response Time</label>
 
-            <div class="form-group">
-                <label>Issue Month</label>
-                <input type="number" id="issue_month">
-            </div>
+<input type="number" id="response_time">
 
-        </div>
 
-        <button onclick="predictCSAT()">Predict CSAT</button>
+<label>Survey Delay</label>
 
-        <div id="loader" class="loader hidden"></div>
+<input type="number" id="survey_delay">
 
-        <div id="result" class="result"></div>
 
-    </div>
+<label>Issue Hour</label>
+
+<input type="number" id="issue_hour">
+
+
+<label>Issue Day</label>
+
+<input type="number" id="issue_day">
+
+
+<label>Issue Month</label>
+
+<input type="number" id="issue_month">
+
+
+<button onclick="predictCSAT()">Predict CSAT</button>
+
+
+<div id="result"></div>
+
+<div id="probabilities"></div>
+
+
+</div>
 
 </div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
+
 </html>
