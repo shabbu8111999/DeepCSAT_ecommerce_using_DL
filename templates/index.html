@@ -7,6 +7,9 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+<!-- chart library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -21,41 +24,37 @@
 
 
 <label>Customer Remark</label>
-
 <textarea id="remark"></textarea>
 
 
 <label>Response Time</label>
-
 <input type="number" id="response_time">
 
 
 <label>Survey Delay</label>
-
 <input type="number" id="survey_delay">
 
 
 <label>Issue Hour</label>
-
 <input type="number" id="issue_hour">
 
 
 <label>Issue Day</label>
-
 <input type="number" id="issue_day">
 
 
 <label>Issue Month</label>
-
 <input type="number" id="issue_month">
 
 
 <button onclick="predictCSAT()">Predict CSAT</button>
 
 
-<div id="result"></div>
+<h2 id="result"></h2>
 
-<div id="probabilities"></div>
+
+<!-- probability chart -->
+<canvas id="probChart"></canvas>
 
 
 </div>
