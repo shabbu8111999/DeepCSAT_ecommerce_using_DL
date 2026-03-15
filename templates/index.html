@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DeepCSAT Prediction</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="card">
+
+        <h1>DeepCSAT</h1>
+        <p class="subtitle">Ecommerce Customer Satisfaction Prediction</p>
+
+        <div class="form-group">
+            <label>Customer Remark</label>
+            <textarea id="remark" placeholder="Enter customer feedback..."></textarea>
+        </div>
+
+        <div class="grid">
+
+            <div class="form-group">
+                <label>Response Time (minutes)</label>
+                <input type="number" id="response_time">
+            </div>
+
+            <div class="form-group">
+                <label>Survey Delay (minutes)</label>
+                <input type="number" id="survey_delay">
+            </div>
+
+            <div class="form-group">
+                <label>Issue Hour</label>
+                <input type="number" id="issue_hour">
+            </div>
+
+            <div class="form-group">
+                <label>Issue Day</label>
+                <input type="number" id="issue_day">
+            </div>
+
+            <div class="form-group">
+                <label>Issue Month</label>
+                <input type="number" id="issue_month">
+            </div>
+
+        </div>
+
+        <button onclick="predictCSAT()">Predict CSAT</button>
+
+        <div id="loader" class="loader hidden"></div>
+
+        <div id="result" class="result"></div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
